@@ -9,6 +9,9 @@ jobs:
       - name: Starting Workflow
         run: echo "Starting my first job"
 
+      - name: Checking the runner
+        run: echo "The workflow is running on ${{ runner.os }} hosted by GitHub.
+
       - name: Checkout the Repo
         uses: actions/checkout@v4
 
