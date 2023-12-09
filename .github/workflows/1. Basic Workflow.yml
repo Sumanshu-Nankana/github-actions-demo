@@ -7,3 +7,7 @@ jobs:
     steps:
       - name: Starting Workflow
         run: echo "Starting my first job"
+
+      - name: Checkout the Repo
+        uses: actions/checkout@v4
+
