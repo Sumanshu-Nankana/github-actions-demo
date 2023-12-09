@@ -16,3 +16,8 @@ jobs:
           echo "Below are the list of files" 
           ls ${{ github.workspace }}
 
+      - name: Setting up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
