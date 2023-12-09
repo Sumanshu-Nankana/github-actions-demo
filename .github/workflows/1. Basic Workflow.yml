@@ -21,3 +21,6 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Checking Python Installed Version
+        run: python --version
+
