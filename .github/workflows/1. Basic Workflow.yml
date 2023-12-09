@@ -12,5 +12,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: List the content of repo
-        run: ls ${{ github.workspace }}
+        run: |
+          echo "Below are the list of files" 
+          ls ${{ github.workspace }}
 
