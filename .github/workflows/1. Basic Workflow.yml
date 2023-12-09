@@ -15,6 +15,8 @@ jobs:
       - name: Checkout the Repo
         uses: actions/checkout@v4
 
+      - run: echo "💡 The ${{ github.repository }} has been cloned to the runner from ${{ github.ref }} branch."
+
       - name: List the content of repo
         run: |
           echo "Below are the list of files" 
