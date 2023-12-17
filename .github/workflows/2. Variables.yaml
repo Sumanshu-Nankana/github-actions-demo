@@ -31,3 +31,4 @@ jobs:
           echo "The value of GREETING env vars is ${{ env.GREETING }}"
           echo "The value of NAME env vars is ${{ env.NAME }}"
           echo "The value of JOBENVVAR is ${{ env.JOBENVVAR }}"
+          echo "The value of FIRSTNAME is ${{ env.FIRSTNAME }}"
