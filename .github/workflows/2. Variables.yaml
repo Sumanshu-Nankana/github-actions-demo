@@ -4,6 +4,7 @@ on:
   workflow_dispatch
 env:
   GREETING: "Namastey"
+  NAME: ${{ vars.WELCOME }}
 
 
 jobs:
@@ -20,4 +21,6 @@ jobs:
           LASTNAME: "Nankana"
 
       - name: Printing the Workflow Environment Variables
-        run: echo "The value of GREETING env vars is ${{ env.GREETING }}"
+        run: |
+          echo "The value of GREETING env vars is ${{ env.GREETING }}"
+          echo "The value of NAME env vars is ${{ env.NAME }}"
