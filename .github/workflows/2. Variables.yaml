@@ -10,12 +10,18 @@ env:
 jobs:
   first_job:
     runs-on: ubuntu-latest
+    env:
+      JOBENVVAR: "This is job environment variable"
     steps:
       - name: Printing the Repository Variables
-        run: echo "The value of WELCOME is ${{ vars.WELCOME }}"
+        run: |
+          echo "The value of WELCOME is ${{ vars.WELCOME }}"
+          echo "The value of JOBENVVAR is $JOBENVVAR"
 
       - name: Setting Up and Printing the Environment Variables
-        run: echo "The first name is ${{ env.FIRSTNAME }} and last name is ${{ env.LASTNAME }}"
+        run: |
+          echo "The first name is ${{ env.FIRSTNAME }} and last name is ${{ env.LASTNAME }}"
+          echo "The value of JOBENVVAR is $JOBENVVAR"
         env:
           FIRSTNAME: "Sumanshu"
           LASTNAME: "Nankana"
@@ -24,3 +30,4 @@ jobs:
         run: |
           echo "The value of GREETING env vars is ${{ env.GREETING }}"
           echo "The value of NAME env vars is ${{ env.NAME }}"
+          echo "The value of JOBENVVAR is $JOBENVVAR"
