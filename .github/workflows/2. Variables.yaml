@@ -6,5 +6,11 @@ jobs:
   first_job:
     runs-on: ubuntu-latest
     steps:
-      - name: Printing the Environment Variables
+      - name: Printing the Repository Variables
         run: echo "The value of WELCOME is ${{ vars.WELCOME }}"
+
+      - name: Setting Up and Printing the Environment Variables
+        run: echo "The first name is ${{ env.FIRSTNAME }} and last name is ${{ env.LASTNAME }}"
+        env:
+          FIRSTNAME: "Sumanshu"
+          LASTNAME: "Nankana"
