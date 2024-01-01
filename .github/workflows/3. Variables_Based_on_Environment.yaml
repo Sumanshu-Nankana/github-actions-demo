@@ -19,7 +19,7 @@ jobs:
     environment: qa
     needs: dev_deployment
     steps:
-      - name: Print Dev Environment Variables
+      - name: Print QA Environment Variables
         run: echo "The Dev environment variable is ${{ vars.HOSTNAME }}"
 
   prod_deployment:
@@ -27,5 +27,5 @@ jobs:
     environment: prod
     needs: qa_deployment
     steps:
-      - name: Print Dev Environment Variables
+      - name: Print Prod Environment Variables
         run: echo "The Dev environment variable is ${{ vars.HOSTNAME }}"
