@@ -31,3 +31,4 @@ jobs:
         with:
           name: unittest-report.html
           path: result.html
+          retention-days: 1
