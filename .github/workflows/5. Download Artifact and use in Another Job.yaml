@@ -1,4 +1,4 @@
-name: 4 5. Download Artifact and Use in Another Job
+name: 5. Download Artifact and Use in Another Job
 run-name: ${{ github.actor }} is running the ${{ github.workflow }}
 on:
   - workflow_dispatch
