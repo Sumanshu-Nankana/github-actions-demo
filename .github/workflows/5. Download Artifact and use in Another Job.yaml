@@ -1,0 +1,37 @@
+name: 4 5. Download Artifact and Use in Another Job
+run-name: ${{ github.actor }} is running the ${{ github.workflow }}
+on:
+  - workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create Python Script
+        run: echo "print('Hello I am artifact')" > hello_artifact.py
+
+      - name: Upload the Python Script
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-script
+          path: hello_artifact.py
+          retention-days: 1
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setting up the Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Download the Python Script/Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: python-script
+          path: .
+
+      - name: Run the Python Script
+        run: python hello_artifact.py
