@@ -32,3 +32,27 @@ jobs:
           name: unittest-report.html
           path: result.html
           retention-days: 1
+
+  second-job:
+    runs-on: ubuntu-server
+    needs: unit-test
+
+    steps:
+      - name: First Step
+        run: echo "This is first step of second job"
+
+      - name: Second Step
+        run: |
+          echo "This is second step for second job"
+          exit 1
+  
+  third-job:
+    runs-on: ubuntu-server
+    needs: second-job
+
+    steps:
+      - name: First Step
+        run: echo "This is first step for second job"
+
+      - name: Second Step
+        run: sleep 30
