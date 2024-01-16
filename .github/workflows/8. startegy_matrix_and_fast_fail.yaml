@@ -1,0 +1,37 @@
+name: 8. Staretgy Matrix and Fast Fail
+run-name: ${{ github.actor }} is running the ${{ github.workflow }}
+on:
+  - workflow_dispatch
+
+
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+    startegy:
+      matrix:
+        python_version: [3.9, 3.10, 3.11]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{matrix.python_version}}
+
+      - name: Install Dependecies
+        run: |
+          python -m pip install --upgrade pip
+          pip install poetry
+          poetry install --with dev --no-root
+
+      - name: Run Test and Generate HTML Report
+        run: poetry run pytest --html=result.html
+
+      - name: Store the HTML Report to artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: unittest-report.html
+          path: result.html
+          retention-days: 1
