@@ -1,4 +1,4 @@
-name: 8. Staretgy Matrix and Fast Fail
+name: 8. Staretgy Matrix and Fail fast
 run-name: ${{ github.actor }} is running the ${{ github.workflow }}
 on:
   - workflow_dispatch
@@ -8,8 +8,9 @@ jobs:
   unit-test:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        python_version: [3.9, 3.10, 3.11]
+        python_version: [3.9, 3.10.13, 3.11]
 
     steps:
       - name: Checkout Repository
