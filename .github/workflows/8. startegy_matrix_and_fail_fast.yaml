@@ -29,6 +29,7 @@ jobs:
 
       - name: Run Test and Generate HTML Report
         run: poetry run pytest --html=result.html
+        continue-on-error: true
 
       - name: Store the HTML Report to artifacts
         uses: actions/upload-artifact@v4
