@@ -38,6 +38,6 @@ jobs:
       - name: Store the HTML Report to artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: unittest-report.html
+          name: unittest-report-${{ matrix.python_version }}
           path: result.html
           retention-days: 1
