@@ -1,0 +1,32 @@
+name: Common Workflow
+on:
+  - workflow_call
+
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependecies
+        run: |
+          python -m pip install --upgrade pip
+          pip install poetry
+          poetry install --with dev --no-root
+
+      - name: Run Test and Generate HTML Report
+        continue-on-error: true
+        run: poetry run pytest --html=result.html
+
+      - name: Store the HTML Report to artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: unittest-report.html
+          path: result.html
+          retention-days: 1
