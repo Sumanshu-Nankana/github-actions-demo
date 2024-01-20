@@ -5,7 +5,7 @@ on:
 
 
 jobs:
-  unit-test:
+  unit-test-from-common-worfklow:
     uses: ./.github/workflows/Common Workflow.yaml
 
   second-job:
