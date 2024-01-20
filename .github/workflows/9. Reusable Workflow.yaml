@@ -1,4 +1,4 @@
-name: 8. Reusable Worfklow
+name: 9. Reusable Worfklow
 run-name: ${{ github.actor }} is running the ${{ github.workflow }}
 on:
   - workflow_dispatch
