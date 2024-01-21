@@ -1,4 +1,4 @@
-name: 11 Deploy Workflow
+name: 11. Deploy Workflow
 on:
   workflow_run:
     workflows: ["10. Testing Workflow"]
