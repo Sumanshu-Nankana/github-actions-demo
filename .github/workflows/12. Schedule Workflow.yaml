@@ -1,0 +1,15 @@
+name: 12. Schedule Workflow
+on:
+  schedule:
+    - cron: '10 17 21 1 0'
+
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Echo command
+        ruun: echo "This is Schedule Workflow"
