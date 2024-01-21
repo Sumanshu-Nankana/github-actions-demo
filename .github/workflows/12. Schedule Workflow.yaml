@@ -12,4 +12,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Echo command
-        ruun: echo "This is Schedule Workflow"
+        run: echo "This is Schedule Workflow"
