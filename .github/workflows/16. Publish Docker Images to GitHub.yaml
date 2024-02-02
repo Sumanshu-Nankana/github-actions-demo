@@ -7,8 +7,8 @@ jobs:
   publish-docker-image:
     runs-on: ubuntu-latest
 
-    permissions:
-      packages: write
+#    permissions:
+#      packages: write
 
     steps:
       - name: Login into the github container registry
