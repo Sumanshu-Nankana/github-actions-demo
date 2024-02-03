@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup AWS CLI
-        uses: sumanshu-nankana/setup-aws-cli
+        uses: actions/setup-aws-cli
         with:
           region: "eu-west-1"
           aws-access-key: ${{ secrets.AWS_ACCESS_KEY }}
