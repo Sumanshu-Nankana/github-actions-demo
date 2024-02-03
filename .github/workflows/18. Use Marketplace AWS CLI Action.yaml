@@ -1,4 +1,4 @@
-name: 17. AWS CLI Workflow
+name: 18. Use Marketplace AWS CLI Action
 run-name: ${{ github.actor }} is running the ${{ github.workflow }}
 on:
   - workflow_dispatch
